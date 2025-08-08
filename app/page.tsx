@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { prisma } from './lib/prisma.ts'
+import { prisma } from '../lib/prisma'
 
 export default async function Home() {
   const articles = await prisma.article.findMany({ orderBy: { createdAt: 'desc' }, take: 10 })
